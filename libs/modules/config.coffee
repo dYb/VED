@@ -66,6 +66,7 @@ module.exports = {
 		compress: true
 		dumpLineNumbers: "mediaquery"
 	},
+
 	coffeescript: {
 		enable: true
 		useTmpDir: true
