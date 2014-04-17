@@ -29,7 +29,6 @@ var renderFile = function (path, options, fn) {
 	});
 	try {
 	  var result = engine.render(options);
-	  console.log(result)
 	  fn(null, result);
 	} catch (e) {
 	  console.log(e.stack);

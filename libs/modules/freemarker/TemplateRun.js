@@ -25,9 +25,13 @@ exports.processTemplate = function(args) {
 
 
 	if(args.callback) {
+		var charset = "utf-8";
+		if(require('os').platform() == 'win32'){
+			charset = 'gbk';
+		}
 		cmd.stdout.on("data", function(data) {
 			// args.callback(null, iconv.decode(data, 'gbk'));
-			resultData += iconv.decode(data, 'gbk');
+			resultData += iconv.decode(data, charset);
 		});
 		cmd.stderr.on("data", function(data) {
 			// Print error message
