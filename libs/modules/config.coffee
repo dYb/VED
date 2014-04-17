@@ -56,6 +56,9 @@ module.exports = {
 	},
 	velocity: {
 		enable: true
+		root:""
+		template: ""
+		macro: {}
 	},
 	lesscss: {
 		enable: true
@@ -66,7 +69,6 @@ module.exports = {
 		compress: true
 		dumpLineNumbers: "mediaquery"
 	},
-
 	coffeescript: {
 		enable: true
 		useTmpDir: true

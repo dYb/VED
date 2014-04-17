@@ -24,6 +24,8 @@ exports.init = (gConfig)->
 		try
 			# Merge defaultConfig with user-defined config
 			modConfig = fedUtil.extend(defaultConfig[mod], gConfig[mod])
+			if mod is "velocity"
+				modConfig.macroDir = gConfig.configDir
 			require("./" + mod).init?(modConfig)
 			# console.log "Load module [#{mod}] ok!"
 		catch e

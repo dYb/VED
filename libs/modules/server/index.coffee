@@ -33,6 +33,7 @@ loadConfig = (fileName)->
 	serverConfigs = configs.server
 
 	configd = path.dirname(configFile)
+	configs.configDir = configd
 
 	# All paths is relative to the config file
 	serverConfigs.path.view = fedUtil.realPath(configd, serverConfigs.path.view)
