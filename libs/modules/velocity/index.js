@@ -1,14 +1,15 @@
 /**
  * interface with expressjs
  *
- * @author : ijse
+ * @author : dYb
  */
 var path_normalize = require("path").normalize;
-var vmEngine = require("./TemplateRun.js");
+// var vmEngine = require("./TemplateRun.js");
+var VmxEngine = require("vmx").Engine;
 
 // vm Renderer
 // ===========
-// @param tpl    - freemarker template name, without .vm
+// @param tpl    - velocity template name, without .vm
 // @param data   - data model
 function vmRender(res) {
     return function(tpl, data) {
@@ -17,23 +18,23 @@ function vmRender(res) {
     };
 }
 
-//TODO: Add hook when local server initialize
 var renderFile = function (path, options, fn) {
-	templateName = "";
-	viewPath = path_normalize(options.settings.views);
-	templateName = path.replace(viewPath, "");
-	templateName = templateName.replace(/^(\/|\\)/, "");
+	var templateName = "";
+	var viewPath = path_normalize(options.settings.views);
+	var templateName = path.replace(viewPath, "");
+	var templateName = templateName.replace(/^(\/|\\)/, "");
+	var engine = new VmxEngine({
+		root: viewPath,
+		template: viewPath + "\\" +templateName
+	});
 	try {
-		vmEngine.processTemplate({
-			"viewPath": viewPath,
-			"fileName": templateName,
-			"dataModel": options,
-			"callback": fn
-		});
-	} catch(err) {
-		fn(err);
-		throw err;
-	}
+	  var result = engine.render(options);
+	  console.log(result)
+	  fn(null, result);
+	} catch (e) {
+	  console.log(e.stack);
+	};
+
 };
 
 // init
