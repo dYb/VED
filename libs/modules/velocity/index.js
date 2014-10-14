@@ -3,8 +3,8 @@
  *
  * @author : dYb
  */
-var path_normalize = require("path").normalize;
-// var vmEngine = require("./TemplateRun.js");
+var path = require("path");
+var path_normalize = path.normalize;
 var VmxEngine = require("vmx").Engine;
 var vmMacro = {}
 
@@ -21,11 +21,11 @@ function vmRender(res) {
 
 var renderFile = function (path, options, fn) {
 	var viewPath = path_normalize(options.settings.views);
-	var templateName = path.replace(viewPath, "");
-	templateName = templateName.replace(/^(\/|\\)/, "");
+	path = path_normalize(path);
+
 	var engine = new VmxEngine({
 		root: viewPath,
-		template: viewPath + "\\" + templateName,
+		template: path,
 		macro: vmMacro
 	});
 	try {
@@ -36,14 +36,13 @@ var renderFile = function (path, options, fn) {
 		fn(e.stack)
 	};
 
-};
+}
 
 // init
 // =====
 // Bind event to plugin
 exports.init = function(configs) {
-	vmMacro = configs.macroDir + '\\'+ path_normalize(configs.macro) 
-	vmMacro = vmMacro || {}
+	vmMacro = path.resolve(configs.macroDir, configs.macro) || {};
 	// Regist render engine to app
 	Hub.on("localServer.renderEngine.regist", function(param){
 		app = param.app;
