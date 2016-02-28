@@ -22,7 +22,7 @@ exports.init = function(config) {
 		// console.log("-----run sass middleware-----");
 		sassCfg.src = app.get("static resource");
 		if(config.useTmpDir) {
-			sassCfg.dest = path.join(os.tmpDir(), "tmp_fed_sass");
+			sassCfg.dest = path.join(os.tmpDir(), "tmp_ved_sass");
 		} else if(!sassCfg.dest) {
 			sassCfg.dest = sassCfg.src;
 		}

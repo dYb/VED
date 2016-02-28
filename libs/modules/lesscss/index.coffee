@@ -10,7 +10,7 @@ exports.init = (lessCfg)->
 		lessCfg.src = app.get("static resource")
 
 		if lessCfg.useTmpDir
-			lessCfg.dest = path.join os.tmpDir(), "tmp_fed_less"
+			lessCfg.dest = path.join os.tmpDir(), "tmp_ved_less"
 		else if not lessCfg.dest
 			lessCfg.dest = lessCfg.src
 		app.use(lessMiddleware(lessCfg))

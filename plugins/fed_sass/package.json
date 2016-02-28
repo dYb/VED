@@ -1,5 +1,5 @@
 {
-  "name": "fed_sass",
+  "name": "ved_sass",
   "version": "0.0.1",
   "description": "compile sass files with sass-middleware",
   "main": "index.js",

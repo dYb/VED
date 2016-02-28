@@ -23,7 +23,7 @@ module.exports = {
 		this.render.ftl("folder/aa", {});
 	},
 	"post /post": function(req, res) {
-		this.render.text("hello fed");
+		this.render.text("hello ved");
 	},
 	"post /post-with-param": function(req, res) {
 		this.render.text("hello, " + req.body.name);

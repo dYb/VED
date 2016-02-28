@@ -8,7 +8,7 @@
 #TODO: AUTO RE-GENERATE HTML FILE
 
 # load configs
-fedUtil = require "../../utils"
+vedUtil = require "../../utils"
 path   = require "path"
 fs = require "fs"
 jsYaml = require "js-yaml"
@@ -22,15 +22,15 @@ exports.exec = (args, cmdConfig)->
 
 	# Convert configFile path to real path
 	console.log "\nRead and parse config file"
-	configFile = fedUtil.realPath process.cwd(), args.configFile
+	configFile = vedUtil.realPath process.cwd(), args.configFile
 
 	# Load configFile
 	config = require configFile
 
 	# Parse configs
-	config.viewPath = fedUtil.realPath path.dirname(configFile), config.viewPath
-	config.destPath = fedUtil.realPath path.dirname(configFile), config.destPath
-	config.mockPath = fedUtil.realPath path.dirname(configFile), config.mockPath
+	config.viewPath = vedUtil.realPath path.dirname(configFile), config.viewPath
+	config.destPath = vedUtil.realPath path.dirname(configFile), config.destPath
+	config.mockPath = vedUtil.realPath path.dirname(configFile), config.mockPath
 
 	# Prepare..
 	tplEngine = require config.engine
@@ -40,7 +40,7 @@ exports.exec = (args, cmdConfig)->
 
 	# Traverse mocks, export
 	excludeFile = /^(\.|_)/; # exclude files name begin of "."
-	fedUtil.traverseFolderSync config.mockPath, excludeFile, (err, file)->
+	vedUtil.traverseFolderSync config.mockPath, excludeFile, (err, file)->
 
 		return if err
 
@@ -58,7 +58,7 @@ exports.exec = (args, cmdConfig)->
 		mocks.forEach (mock, n)->
 			template = path.join config.viewPath, mock.template
 			toFile = path.join config.destPath, mock.toFile
-			viewData = fedUtil.extend config.globals, mock.data, {
+			viewData = vedUtil.extend config.globals, mock.data, {
 				settings: {
 					template: template
 					toFile: toFile
@@ -68,7 +68,7 @@ exports.exec = (args, cmdConfig)->
 			}
 
 			# Make sure the dest folder exist
-			fedUtil.mkdirSync(path.dirname(toFile));
+			vedUtil.mkdirSync(path.dirname(toFile));
 
 			# Render the file
 			tplEngine.renderFile template, viewData, (err, data)->
@@ -77,7 +77,7 @@ exports.exec = (args, cmdConfig)->
 				console.log "- done #{n+1} of #{mocks.length}"
 		return
 	endTime = Date.now()
-	console.log "\n=======================\nfedHtml: All done within #{(endTime-startTime)/1000}s!"
+	console.log "\n=======================\nvedHtml: All done within #{(endTime-startTime)/1000}s!"
 
 generateMocks = (obj, config)->
 	mockList = []
@@ -85,7 +85,7 @@ generateMocks = (obj, config)->
 
 	traPath = path.join config.mockPath, obj.from
 	# Traverse folder, read each file
-	fedUtil.traverseFolderSync traPath, (err, file)->
+	vedUtil.traverseFolderSync traPath, (err, file)->
 
 		return if err
 
@@ -109,7 +109,7 @@ generateMocks = (obj, config)->
 			toFile: path.join(obj.toFolder, path.basename(file))
 		}
 
-		mock.data = fedUtil.extend obj.shared, preConfig, {
+		mock.data = vedUtil.extend obj.shared, preConfig, {
 			content: ctnData
 		}
 

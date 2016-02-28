@@ -31,7 +31,7 @@ module.exports = {
 			}
 		}
 	},
-	fedhtml: {
+	vedhtml: {
 		enable: true
 		command: {
 			name: "parse"
@@ -44,7 +44,7 @@ module.exports = {
 			}
 		}
 	},
-	fedDoc: {
+	vedDoc: {
 		enable: true
 		command: {
 			name: "doc"

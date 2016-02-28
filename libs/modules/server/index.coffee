@@ -1,6 +1,6 @@
 path         = require("path")
 watch        = require("nodewatch")
-fedUtil      = require("../../utils")
+vedUtil      = require("../../utils")
 childProcess = require("child_process")
 
 # localServer process handler
@@ -27,7 +27,7 @@ exports.exec = (argv, config)->
 # Load config file and format configs
 loadConfig = (fileName)->
 	cwd = process.cwd()
-	configFile = fedUtil.realPath(cwd, fileName)
+	configFile = vedUtil.realPath(cwd, fileName)
 	configs = require(configFile)
 
 	serverConfigs = configs.server
@@ -36,9 +36,9 @@ loadConfig = (fileName)->
 	configs.configDir = configd
 
 	# All paths is relative to the config file
-	serverConfigs.path.view = fedUtil.realPath(configd, serverConfigs.path.view)
-	serverConfigs.path.mock = fedUtil.realPath(configd, serverConfigs.path.mock)
-	serverConfigs.path.public = fedUtil.realPath(configd, serverConfigs.path.public)
+	serverConfigs.path.view = vedUtil.realPath(configd, serverConfigs.path.view)
+	serverConfigs.path.mock = vedUtil.realPath(configd, serverConfigs.path.mock)
+	serverConfigs.path.public = vedUtil.realPath(configd, serverConfigs.path.public)
 
 	return configs
 

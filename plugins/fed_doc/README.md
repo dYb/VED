@@ -1,4 +1,4 @@
-Make doc for fed backend
+Make doc for ved backend
 ========================
 分析代码文件，生成文档文件
 
@@ -57,7 +57,7 @@ Make doc for fed backend
 说明：
 	1. `package`是文件存放的文件夹路径，与`URI`无关
 	2. `class`是文件名称，与`URI`无关
-	3. `URI`是`fed("get /list")`中第一个参数包含的内容，实际访问路径
+	3. `URI`是`ved("get /list")`中第一个参数包含的内容，实际访问路径
 	4. `async`是否异步，为`true`时为异步请求；存在此标记即为`true`
 	5. 标记"@"的参数为需要相应标记，其它不需要
 	6. `desc` 紧跟`@title`之后，下一个"@"之前的内容

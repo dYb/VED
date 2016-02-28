@@ -1,9 +1,9 @@
 
-fedUtils = require("../libs/utils")
+vedUtils = require("../libs/utils")
 
 
 ##TODO: COVER ALL APIs
 
-describe "fedUtils", ()->
+describe "vedUtils", ()->
 	it "#traverseFolderSync()", ()->
-		fedUtils.traverseFolderSync __dirname + "/res", ()->
+		vedUtils.traverseFolderSync __dirname + "/res", ()->

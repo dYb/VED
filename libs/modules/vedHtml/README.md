@@ -1,4 +1,4 @@
-fedHtml
+vedHtml
 ==========
 实现静态页生成，适于无后端业务逻辑的需求。
 
@@ -15,7 +15,7 @@ fedHtml
 		// 模板编码
 		"encoding": "utf-8",
 		// 相对于命令执行时当前目录
-		"viewPath": "./plugins/fed_2html/test/res",
+		"viewPath": "./plugins/ved_2html/test/res",
 		// 生成的静态文件保存地址，相对于命令执行当前目录
 		"destPath": "./test/htmls",
 		// Mocks 数据文件
@@ -29,13 +29,13 @@ fedHtml
 
 2. 执行命令：
 
-	fed parse -c path/to/config/file
+	ved parse -c path/to/config/file
 
 之后，便会在"savePath"所指定的目录中生成相应静态文件。
 
 若要使用其它模板引擎，可以在FED根目录安装：
 
-	fed> npm install handlebars
+	ved> npm install handlebars
 
 然后，在配置文件中配置相应名称即可。
 

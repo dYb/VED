@@ -32,7 +32,7 @@ describe "基本功能测试", ->
 		it "请求静态文本内容", (done)->
 			request
 				.get("/test")
-				.expect(200, "hello fed")
+				.expect(200, "hello ved")
 				.end(done)
 		it "请求不存在的地址", (done)->
 			request
@@ -46,7 +46,7 @@ describe "基本功能测试", ->
 		it "不带参数请求", (done)->
 			request
 				.post("/post")
-				.expect(200, "hello fed")
+				.expect(200, "hello ved")
 				.end(done)
 		it "带参数的POST请求", (done)->
 			request

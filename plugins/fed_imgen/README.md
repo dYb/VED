@@ -1,4 +1,4 @@
-fed_imgen
+ved_imgen
 =========
 
 生成测试图片工具

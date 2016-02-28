@@ -6,6 +6,6 @@ module.exports = {
 		 * @author  ijse
 		 * @async false
 		 */
-		this.render.text("hello fed");
+		this.render.text("hello ved");
 	}
 };

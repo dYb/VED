@@ -1,5 +1,5 @@
 {
-  "name": "fed_vm",
+  "name": "ved_vm",
   "version": "0.0.1",
   "description": "Make Freemarker template able for nodeJs",
   "main": "index.js",

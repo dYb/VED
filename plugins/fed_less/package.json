@@ -1,5 +1,5 @@
 {
-  "name": "fed_less",
+  "name": "ved_less",
   "version": "0.0.1",
   "description": "compile less files with less-middleware",
   "main": "index.js",

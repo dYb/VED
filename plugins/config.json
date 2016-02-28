@@ -1,6 +1,6 @@
 
 {
-	"fed_less": {
+	"ved_less": {
 		"useTmpDir": false,
 		"force": true,
 		"optimization": 1,
@@ -8,22 +8,22 @@
 		"compress": true,
 		"dumpLineNumbers": "mediaquery"
 	},
-	"fed_coffee": {
+	"ved_coffee": {
 		"force": true,
 		"once": false,
 		"debug": true,
 		"prefix": "",
 		"useTmpDir": true
 	},
-	"fed_imgen": {
+	"ved_imgen": {
 		"cacheTimeout": 5000,
 		"url": "/_",
 		"defaultColor": [255, 0, 0, 0.7],
 		"destPath": false
 	},
-	"fed_ftl": {},
-	"fed_vm": {},
-	"fed_2html": {},
-	"fed_doc": {},
+	"ved_ftl": {},
+	"ved_vm": {},
+	"ved_2html": {},
+	"ved_doc": {},
 	"sample": {}
 }

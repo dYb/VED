@@ -13,8 +13,8 @@ cmdMap = Module.initCommand()
 CLI = Optimist
 		.usage("""
 			Usage:
-			  > fed [OPTIONS] <CONFIG_FILE>
-			  > fed <SUBCOMMAND> [OPTIONS]
+			  > ved [OPTIONS] <CONFIG_FILE>
+			  > ved <SUBCOMMAND> [OPTIONS]
 			\nSubCommand:
 			  #{Object.keys(cmdMap)}
 		""")
@@ -54,7 +54,7 @@ if argv._[0] is "help"
 			cmdCli = Optimist([])
 				.usage("""
 					Usage:
-					  > fed #{cmd.name} [OPTIONS]
+					  > ved #{cmd.name} [OPTIONS]
 				""")
 				.options(cmd.options)
 				.showHelp()

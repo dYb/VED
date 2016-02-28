@@ -1,6 +1,6 @@
 `
 /**
- * Utils for fed_2html
+ * Utils for ved_2html
  *
  * @author ijse
  */

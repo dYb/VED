@@ -1,8 +1,8 @@
 
-fedhtml = require "../../libs/modules/fedHtml"
+vedhtml = require "../../libs/modules/vedHtml"
 
-describe "libs/modules/fedHtml", ->
+describe "libs/modules/vedHtml", ->
 	it "Parse ejs to htmls by config.json", ()->
-		fedhtml.exec {
+		vedhtml.exec {
 			configFile: __dirname + "/res/config.coffee"
 		}

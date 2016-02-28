@@ -1,4 +1,4 @@
-fed_2html
+ved_2html
 ==========
 实现静态页生成，适于无后端业务逻辑的需求。
 
@@ -15,7 +15,7 @@ fed_2html
 		// 模板编码
 		"encoding": "utf-8",
 		// 相对于命令执行时当前目录
-		"basePath": "./plugins/fed_2html/test/res",
+		"basePath": "./plugins/ved_2html/test/res",
 		// 生成的静态文件保存地址，相对于命令执行当前目录
 		"savePath": "./test/htmls",
 		// 模板中所用的全局变量
@@ -41,7 +41,7 @@ fed_2html
 2. 执行命令：
 
 ```
-	fed 2html -C path/to/config/file
+	ved 2html -C path/to/config/file
 ```
 
 之后，便会在"savePath"所指定的目录中生成相应静态文件

@@ -22,7 +22,7 @@ exports.init = function(config) {
 		// console.log("-----run less middleware-----");
 		lessCfg.src = app.get("static resource");
 		if(config.useTmpDir) {
-			lessCfg.dest = path.join(os.tmpDir(), "tmp_fed_less");
+			lessCfg.dest = path.join(os.tmpDir(), "tmp_ved_less");
 		} else if(!lessCfg.dest) {
 			lessCfg.dest = lessCfg.src;
 		}

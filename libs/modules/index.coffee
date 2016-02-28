@@ -7,7 +7,7 @@
 
 # We got Hub in global
 
-fedUtil = require("../utils")
+vedUtil = require("../utils")
 
 # TODO: 启动时从每个目录下寻找配置文件加载，
 defaultConfig = require("./config.coffee")
@@ -23,7 +23,7 @@ exports.init = (gConfig)->
 		continue unless defaultConfig[mod].enable
 		try
 			# Merge defaultConfig with user-defined config
-			modConfig = fedUtil.extend(defaultConfig[mod], gConfig[mod])
+			modConfig = vedUtil.extend(defaultConfig[mod], gConfig[mod])
 			if mod is "velocity"
 				modConfig.macroDir = gConfig.configDir
 			require("./" + mod).init?(modConfig)

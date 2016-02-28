@@ -1,7 +1,7 @@
 {
-  "name": "fed_doc",
+  "name": "ved_doc",
   "version": "0.0.1",
-  "description": "make doc for fed backend",
+  "description": "make doc for ved backend",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

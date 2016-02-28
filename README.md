@@ -1,15 +1,10 @@
-FED - The Front-End Develop Kitchen
-====================
 
-FED 是一个前端开发环境，供前端编写简单的后台接口，以调试开发页面; 前端可以在此环境下，使用真实的URL访问地址访问，并可嫁接于其它服务器调试页面（调试线上代码), 可以写页面模板代码并使用测试数据调试输出，最终可生成文档。
-
-FED 试图重新划分项目开发中前后端分工，明确各开发范围，提高项目并行开发效率，降低前后端开发的耦合度；同时为前端开发提供了可测的工具平台，使之在无后端实现情况下也可模拟后端接口及数据，测试页面功能。
-
-[![Build Status](https://travis-ci.org/ijse/FED.png?branch=master)](https://travis-ci.org/ijse/FED)
+注： 此工程为[FED](https://github.com/ijse/FED)的fork，由于FED原工程改动较大，特此创建一个备份，此工程在某个时间点可能消失。
 
 ## Features
 
 * 支持FreeMarker模板引擎
+* 支持velocity模板引擎
 * 支持标准的HTTP请求方法及返回数据格式
 * 支持less、coffee文件的实时编译
 * 可自动重启应用最新代码
@@ -20,34 +15,27 @@ FED 试图重新划分项目开发中前后端分工，明确各开发范围，�
 1. 创建文件夹:
 
 ```
-$> mkdir fedProj
-$> cd fedProj
+$> mkdir vedProj
+$> cd vedProj
 ```
 
-2. 下载安装FED:
+2. 下载安装VED:
 
 ```
-$> npm install -g fed
+$> npm install -g ved
 ```
 
-3. COPY一份配置文件 "fedProj/FED/configs/index.json", 修改
+3. COPY一份配置文件 "vedProj/VED/configs/index.json", 修改
 
 4. 启动服务：
 
 ```
-$> fed server -w -p 8910 ./configs/index.json
+$> ved server -w -p 8910 ./configs/index.json
 ```
 
-注：`fed server`时必须指定配置文件~！
+注：`ved server`时必须指定配置文件~！
 
-当修改mock文件时，FED会自动重启应用更新。
-
-
-## Documentation
-
-更多的使用说明请移步 [【WIKI】](https://github.com/ijse/FED/wiki), 文档会不定时更新。
-
-同时，如果有任何问题请到[【issues】](https://github.com/ijse/FED/issues)给我提issue，我会尽快处理并答复的。
+当修改mock文件时，VED会自动重启应用更新。
 
 
 ## Contributing
@@ -60,5 +48,5 @@ $> fed server -w -p 8910 ./configs/index.json
 
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ijse/fed/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ijse/ved/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 

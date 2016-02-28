@@ -1,7 +1,7 @@
 {
-  "name": "fed_coffee",
+  "name": "ved_coffee",
   "version": "0.0.1",
-  "description": "add coffee support to fed",
+  "description": "add coffee support to ved",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

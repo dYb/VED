@@ -1,7 +1,7 @@
 
 fs      = require "fs"
 prompt  = require "prompt"
-fedUtil = require "../../utils/index"
+vedUtil = require "../../utils/index"
 path    = require "path"
 
 schema = {
@@ -61,12 +61,12 @@ exports.exec = (args, cmdConfig)->
 		#TODO: Confirm when file exist
 
 		# Auto create directory when directory not exist
-		fedUtil.mkdirSync(path.dirname(fileName))
+		vedUtil.mkdirSync(path.dirname(fileName))
 
 		# Write to file, override if exist
 		fs.writeFileSync(fileName, JSON.stringify({ server: result }, null, 4), "utf-8")
 
 		console.log("\nSuccess!".green + " Now you can edit #{fileName} as you want!")
-		console.log("Start fed:".blue + " $> fed server #{fileName}")
+		console.log("Start ved:".blue + " $> ved server #{fileName}")
 	return
 

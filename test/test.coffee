@@ -18,5 +18,5 @@ require("./testFreemarkerModule.coffee")
 # # 测试即时编译LESS和coffee文件
 require("./testJITModule.coffee")
 
-# 测试fedhtml
+# 测试vedhtml
 require("./testFedHtml")

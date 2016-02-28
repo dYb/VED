@@ -9,7 +9,7 @@ module.exports = {
 		 * @param pass password
 		 * @return success|fail
 		 */
-		this.render.text("hello fed");
+		this.render.text("hello ved");
 	},
 	"get /artical/list": function() {
 		this.render.ftl("index", {

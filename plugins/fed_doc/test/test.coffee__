@@ -1,10 +1,10 @@
 ###
-#	Test fed_doc
+#	Test ved_doc
 #	@author: ijse
 ###
 path = require "path"
 should = require("chai").should()
-fedDoc = require "../index.coffee"
+vedDoc = require "../index.coffee"
 
 tpath = "#{__dirname}/res"
 describe "FED_DOC", ->
@@ -17,7 +17,7 @@ describe "FED_DOC", ->
 			]
 
 			# listFiles()
-			list = fedDoc.listFiles tpath
+			list = vedDoc.listFiles tpath
 			files.length.should.equal list.length
 			list.should.include files[0]
 			list.should.include files[1]
@@ -33,7 +33,7 @@ User login method\r
  @param name username\r
  @param pass password\r
  @return success|fail"
-			result = fedDoc.grepComment tfile
+			result = vedDoc.grepComment tfile
 			result.should.equal dComment
 
 	describe "解析注释内容", ->
@@ -49,29 +49,29 @@ User login method\r
  "
 
 		it "#title 方法名", ->
-			r = fedDoc.parser.title(str)
+			r = vedDoc.parser.title(str)
 			r.should.to.be.a "string"
 			r.should.to.equal "User login method"
 
 		it "#desc 方法描述", ->
-			r = fedDoc.parser.desc(str)
+			r = vedDoc.parser.desc(str)
 			r.should.to.be.a "string"
 			r.should.to.equal "some description\r here is"
 
 		it "#params 请求参数", ->
-			params = fedDoc.parser.params(str)
+			params = vedDoc.parser.params(str)
 			params.length.should.equal 2
 			params.should.to.be.a "array"
 			params[0].should.eql { arg: "name", desc: "username" }
 			params[1].should.eql { arg: "pass", desc: "password" }
 
 		it "#author 方法作者", ->
-			r = fedDoc.parser.author(str)
+			r = vedDoc.parser.author(str)
 			r.should.to.be.a "string"
 			r.should.to.equal "ijse"
 
 		it "#return 请求返回值", ->
-			r = fedDoc.parser.return(str)
+			r = vedDoc.parser.return(str)
 			r.should.to.be.a "string"
 			r.should.to.equal "success|fail abc"
 
